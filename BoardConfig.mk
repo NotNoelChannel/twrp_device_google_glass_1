@@ -9,14 +9,19 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a9
 ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_BOOTLOADER_BOARD_NAME := glass_1
-TARGET_PREBUILT_KERNEL := device/google/glass_1/prebuilt/kernel
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyO2,115200n8 vmalloc=500M androidboot.console=ttyO2 androidboot.carrier=wifi-only product_type=w cpuidle_sysfs_switch
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_PAGE_SIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --second_offset 0x00f00000
+BOARD_KERNEL_PAGESIZE := 2048
 
+TARGET_KERNEL_CONFIG := notle_defconfig
+TARGET_KERNEL_SOURCE := kernel/google/glass_1
+
+
+# LZMA compression for recovery's & kernel ramdisk....
+BOARD_CUSTOM_BOOTIMG_MK := device/google/glass_1/custombootimg.mk
+BOARD_CANT_BUILD_RECOVERY_FROM_BOOT_PATCH := true
 
 # Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
