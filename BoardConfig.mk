@@ -44,5 +44,7 @@ DEVICE_RESOLUTION := 640x360
 TW_FLASH_FROM_STORAGE := true 
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_MAX_BRIGHTNESS := 255
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_SU := true
 TW_BRIGHTNESS_PATH := "/sys/devices/platform/omapdss/manager2/panel-notle-dpi/brightness"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := device/google/glass_1/recovery_keys.c
