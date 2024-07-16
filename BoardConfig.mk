@@ -15,7 +15,7 @@ BOARD_KERNEL_CMDLINE := console=ttyO2,115200n8 vmalloc=500M androidboot.console=
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 
-TARGET_KERNEL_CONFIG := notle_defconfig
+TARGET_KERNEL_CONFIG := recovery_notle_defconfig
 TARGET_KERNEL_SOURCE := kernel/google/glass_1
 
 
